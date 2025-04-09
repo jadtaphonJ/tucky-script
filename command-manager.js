@@ -2,10 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
-const filePath = path.join(__dirname, 'commands.json');
+const os = require('os'); 
 const prompt = inquirer.createPromptModule();
 
+const getFilePath = () => {
+  if (process.pkg) {
+    return path.join(os.homedir(), 'commands.json');
+  } else {
+    return path.join(__dirname, 'commands.json');
+  }
+};
+
+const filePath = getFilePath();
+
 const saveCommand = async (commands) => {
+  if (!fs.existsSync(filePath)) {
+    console.log('test');
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  }
+
   fs.writeFileSync(filePath, JSON.stringify(commands, null, 2), 'utf-8');
   console.log(chalk.green('Command(s) saved successfully!'));
 };
@@ -131,6 +146,11 @@ const editCommand = async () => {
   }
 };
 
+const updateCommands = () => {
+    
+
+}
+
 const main = async () => {
   const args = process.argv.slice(2);
 
@@ -149,6 +169,7 @@ const main = async () => {
       await promptUser();
     } catch (error) {
       console.error(chalk.red('closed script'));
+      console.error(error);
     }
   } else if (args[0] === 'list') {
     try {
