@@ -3,5 +3,10 @@
     "command": "test",
     "description": "test",
     "tag": "test"
+  },
+  {
+    "command": "yyy",
+    "description": "yyy",
+    "tag": "yyy"
   }
 ]

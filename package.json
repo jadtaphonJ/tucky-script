@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node command-manager.js",
+    "exe": "pkg command-manager.js --targets node16-win-x64 --output tucky.exe",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chalk": "5.4.1",
+    "chalk": "4",
     "inquirer": "12.5.2",
     "my-command": "file:"
   }
