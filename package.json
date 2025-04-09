@@ -11,7 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "inquirer": "^12.5.2",
+    "chalk": "5.4.1",
+    "inquirer": "12.5.2",
     "my-command": "file:"
   }
 }
