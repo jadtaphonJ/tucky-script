@@ -1,0 +1,17 @@
+{
+  "name": "my-command",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node command-manager.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "inquirer": "^12.5.2",
+    "my-command": "file:"
+  }
+}
